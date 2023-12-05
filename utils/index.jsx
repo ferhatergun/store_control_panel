@@ -32,6 +32,7 @@ export const updateStore = (values, setStores,resetForm,setErrors,handleClose,st
     .find((store) => store.storeName == values.storeName)
     const isStorePhoneExist = storesAll.filter((store)=>store.id !== values.id)
     .find((store) => store.phone == values.phone)
+    // telefon ve isim kulllanılıyor mu kullanılmıyor mu kontrol ettik
     if(isStoreNameExist && isStorePhoneExist){
         setErrors({ storeName: 'Mağaza İsmi Kullanılıyor',phone: 'Telefon Kullanılıyor' })
     }
@@ -52,6 +53,7 @@ export const updateStore = (values, setStores,resetForm,setErrors,handleClose,st
 }
 
 export const deleteStore = (id,setStores,storesAll,setDeleteStores) => {
+    // id dizi de olabilir tek bir id de olabilir
     const updatedStores = storesAll.filter((store) => (
         Array.isArray(id) ? !id.includes(store.id) : store.id !== id
       ));

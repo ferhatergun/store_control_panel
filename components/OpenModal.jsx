@@ -149,7 +149,9 @@ export default function OpenModal({ Title , setStores, store ,style ,storesAll})
               </div>
               <button type='submit' 
               className="p-2 rounded-md bg-btnColor2 text-white mb-3">
-                Kaydet
+                {
+                  Title === "Mağaza Ekle" ? "Ekle" : "Güncelle"
+                }
               </button>
           </div>
         </form>
