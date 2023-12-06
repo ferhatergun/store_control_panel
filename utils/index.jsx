@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export const addStore = (values,setStores,resetForm,setErrors,handleClose,storesAll) => {
-    console.log(storesAll)
     const isStoreNameExist = storesAll.find((store) => store.storeName == values.storeName)
     const isStorePhoneExist = storesAll.find((store) => store.phone == values.phone)
     if(isStoreNameExist && isStorePhoneExist){
@@ -70,14 +69,11 @@ export const filterOptions = (stores,setStores,query,filterOption) => {
         filterOption === 'a-z' ? a[query].localeCompare(b[query], 'tr') : b[query].localeCompare(a[query], 'tr')
     )
     setStores(sortedStores)
-    console.log(sortedStores)
 } 
 
 export const filterNumber = (stores, setStores, query,filterOption) => {
-    console.log(filterOption)
     const sortedStores = [...stores].sort((a, b) => 
         filterOption === 'azalan' ? a[query] - b[query] : b[query] - a[query]);
     setStores(sortedStores);
-    console.log(sortedStores);
   };
   

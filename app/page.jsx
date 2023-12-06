@@ -39,7 +39,7 @@ export default function Home() {
       color:'white',
     },
   }
-
+  console.log('stores',stores)
   return (
     <div className='flex flex-col md:items-center mt-12 '>
       <div>

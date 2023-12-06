@@ -46,7 +46,7 @@ export default function OpenModal({ Title , setStores, store ,style ,storesAll})
     maxDiscount: Title === "Mağaza Ekle" ? "" : store?.maxDiscount,
     maxPrim: Title === "Mağaza Ekle" ? "" : store?.maxPrim,
     description: Title === "Mağaza Ekle" ? "" : store?.description,
-    cities:[]
+    cities: Title === "Mağaza Ekle" ? [] : store?.cities,
   }
   
 
